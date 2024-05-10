@@ -129,7 +129,7 @@ func update_highscore():
 
 func game_over():
 	game_running = false
-	
+	update_highscore()
 	HUD.get_node("ScoreLabel").text = "Score: 0"
 	
 	last_obs.position.x = 1250
