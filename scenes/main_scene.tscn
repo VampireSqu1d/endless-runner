@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4ei4gsyyy2xy"]
+
+[ext_resource type="Script" path="res://scenes/main_scene.gd" id="1_8r4of"]
+[ext_resource type="PackedScene" uid="uid://cekekf61dfa32" path="res://scenes/background.tscn" id="1_qvt5i"]
+[ext_resource type="PackedScene" uid="uid://ck01vctwk75fb" path="res://scenes/Dino.tscn" id="2_x3y34"]
+[ext_resource type="PackedScene" uid="uid://bqav6ew8x471m" path="res://scenes/ground.tscn" id="3_xrygn"]
+[ext_resource type="PackedScene" uid="uid://c3ktxpjw87bd2" path="res://scenes/stump.tscn" id="4_m6dby"]
+[ext_resource type="PackedScene" uid="uid://d3qy3pj5vfy3y" path="res://scenes/hud.tscn" id="6_v470d"]
+
+[node name="Main Scene" type="Node"]
+script = ExtResource("1_8r4of")
+
+[node name="Background" parent="." instance=ExtResource("1_qvt5i")]
+
+[node name="Ground" parent="." instance=ExtResource("3_xrygn")]
+unique_name_in_owner = true
+
+[node name="Dino" parent="." instance=ExtResource("2_x3y34")]
+unique_name_in_owner = true
+position = Vector2(194, 497)
+scale = Vector2(3, 3)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(576, 324)
+
+[node name="Stump" parent="." instance=ExtResource("4_m6dby")]
+visible = false
+position = Vector2(562, 506)
+
+[node name="HUD" parent="." instance=ExtResource("6_v470d")]
+unique_name_in_owner = true
